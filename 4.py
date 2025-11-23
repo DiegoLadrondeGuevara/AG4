@@ -1,4 +1,4 @@
-import numpy as np  # <--- ¡ESTA LÍNEA FALTABA!
+import numpy as np
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
@@ -23,7 +23,6 @@ u_trans = np.exp(-500 * t) * np.sin(3200 * t)
 
 Rs = [0, 10, 100]
 
-# paths = []  # Ya no es necesario si no guardamos archivos
 
 for R in Rs:
     G = G_from_R(R)
@@ -43,18 +42,6 @@ for R in Rs:
     axs[2].grid()
     axs[2].set_xlabel('t (s)')
 
-    # ❌ ELIMINAMOS la línea de guardado de archivo:
-    # fname=f"/mnt/data/graficas_R{R}.png"
-
     fig.tight_layout()
 
-    # ❌ ELIMINAMOS la línea de guardado de archivo:
-    # fig.savefig(fname,dpi=300)
-
-    # paths.append(fname) # Ya no es necesario
-
-    # ❌ ELIMINAMOS la línea de cierre:
-    # plt.close(fig)
-
-# La línea clave para mostrar TODAS las figuras es esta:
 plt.show()
